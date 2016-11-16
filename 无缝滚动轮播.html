@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+*{margin:0px;padding:0px;}
+ul{list-style: none;}
+    #contner{
+        width:100px;
+        height:600px;
+        border:1px solid gray;
+        position: relative;
+         overflow: hidden; 
+        background-color: pink;
+    }
+
+    ul{overflow: hidden;position: absolute;left:0px;top:0px;}
+    ul li{width:100px;height:148px;border-top:1px solid #666;border-bottom:1px solid #666;}
+    input{width:40px;height:20px;margin:10px auto;text-align: center;cursor:pointer;}
+</style>
+</head>
+<body>
+<input type="bottom" value='上' id='le'>
+<input type="bottom" value='下' id='ri'>
+<div id='contner'>
+<ul id='cont_u'>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+    
+</div>
+    
+    <script>
+           var le=document.getElementById('le');
+           var ri=document.getElementById('ri');
+           var oDiv=document.getElementById('contner');
+           var oul=document.getElementById('cont_u');
+           var oLi=oul.getElementsByTagName('li');
+           var timer=null;
+            oul.innerHTML+=oul.innerHTML;//做无缝滚动需要先复制一份里面的元素加在后面，这样当向上滚动的-负距离小于这个ul高的二分之一，显示出来的还是想要的内容
+           var speed=-5;
+      
+   function move(){
+           clearInterval(timer);//打开定时器之前要先关闭定时器不然，连续点击定时器会累加，越来越快，可以去掉体验一下
+           timer=setInterval(function(){
+
+            if(oul.offsetTop<=-oul.offsetHeight/2){//当向上滚动的距离小于这个ul的二分之一，那就把ul的top拉回0；
+               oul.style.top=0;
+            }else if(oul.offsetTop>0){//当向下滚动的距离大于0，则让它变成负的二分之一
+                oul.style.top=-oul.offsetHeight/2+'px';
+              
+                  }
+              oul.style.top=oul.offsetTop+speed+'px';  
+           
+
+       }
+
+            ,100)       
+
+   }
+ move();
+
+oDiv.onmouseover=function(){//划入关闭定时器
+    clearInterval(timer);
+}
+oDiv.onmouseout=function(){//划出运行定时器
+    move()
+}
+ri.onclick=function(){   //点击向下
+
+     speed=5;//正向的速度
+    move();
+}
+     
+     le.onclick=function(){//点击向上
+    speed=-5;//负向的速度
+    move();
+
+}    
+    </script>
+</body>
+</html>

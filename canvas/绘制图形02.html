@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <canvas id='cavs' width='400' height='400' style='border:1px solid orange'></canvas>
+    <script>
+
+    
+        //1、fillRect(x, y, width, height)绘制一个填充的矩形
+        //2、strokeRect(x, y, width, height)绘制一个矩形的边框
+        //3、clearRect(x, y, width, height)绘制矩形区域
+
+/*
+         var mycav=document.getElementById('cavs');
+         var dro=mycav.getContext('2d');
+         /*dro.fillStyle='silver';*/
+          /*dro.fillStyle= "rgb(200,0,0)";
+          dro.fillRect(25,25,100,100);
+          dro.clearRect(45,45,60,60);
+          dro.strokeRect(50,50,50,50);
+
+        dro.fillStyle='blue';
+        dro.fillRect(100,100,100,100);*/
+
+       
+
+  //1.图形的基本元素是路径。
+  //2.首先绘制路径的起始点 -------beginPath()
+  //3.然后使用画图命令去绘制路径---------------------stroke()通过线条绘制轮廓，-----fill()进行填充
+  //4.然后把路径封闭--------------closePath()
+  //5.路径生成，就能通过描边或者填充路径区域来渲染图形状。
+  
+/*
+function dow(){
+    var mycav=document.getElementById('cavs');
+    if(mycav.getContext){
+        var ctx=mycav.getContext('2d');
+        ctx.beginPath();
+        ctx.fillStyle='orange';//填充颜色
+        ctx.moveTo(0,0);//移动画笔到什么位置开始画
+
+        ctx.lineTo(100,25);//第二笔
+        ctx.lineTo(125,50);//第三笔
+        ctx.lineTo(100,75);//第四笔
+       /* ctx.lineTo(125,50);*/
+ /*       ctx.fill();//填充,没有参数
+    }
+
+}
+
+window.onload=function(){
+    dow();
+}
+*/
+
+
+
+
+
+//绘制笑脸
+
+/*
+function dow(){
+    var mycvs=document.getElementById('cavs');
+    if(mycvs.getContext){
+
+        var ctx=mycvs.getContext('2d');
+        ctx.beginPath();
+       
+        ctx.arc(75,75,50,0,Math.PI*2);//x轴，y轴，半径，开始的角度，结束的角度
+        ctx.moveTo(105,75);//转移绘制点
+        ctx.arc(75,75,30,0,Math.PI*1);
+        ctx.moveTo(50,60);
+        ctx.arc(45,60,5,0,Math.PI*2);
+        
+      
+        ctx.moveTo(110,60);
+          ctx.arc(105,60,5,0,Math.PI*2);
+
+          ctx.stroke();//绘制线条,描边的话不会自动闭合路径
+
+
+    }
+
+
+}
+
+dow();*/
+
+
+
+
+
+
+
+
+//绘制两个三角形
+
+function dow(){
+    var mcav=document.getElementById('cavs');
+    if(mcav.getContext){
+        var ctx=mcav.getContext('2d');
+
+        ctx.beginPath();
+        ctx.fillStyle='orange';
+        ctx.moveTo(100,100);
+        ctx.lineTo(120,140);
+        ctx.lineTo(120,60);
+        ctx.fill();
+        
+ctx.beginPath();
+    ctx.moveTo(150,205);
+    ctx.lineTo(150,45);
+    ctx.lineTo(45,205);
+    ctx.closePath();
+    ctx.stroke();
+      
+
+    }
+
+}
+dow();
+
+    </script>
+</body>
+</html>

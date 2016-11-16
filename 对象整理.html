@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    .tsd{text-shadow:0 -3px 3px gray;font-size:20px;text-align: right;}
+
+
+</style>
+</head>
+<body>
+<div class='tsd'>test</div>
+   <script>
+      
+      /*function res(num){
+         if(num<=1){
+            return 1;
+
+         }else{
+            return num*res(num-1);
+         }
+
+      }
+
+    alert(res(10));*/
+
+//定义类型值
+
+/*function aa(){
+
+}
+var box=new aa();
+box.name='coco'
+box.age=23;
+alert(box.name);
+alert(box instanceof aa);
+*/
+/*
+function box(obj){
+    obj.name='coco';
+}
+var p=new Object();
+box(p);
+alert(p.name);*/
+
+
+/*function add(){
+    var i=0;
+    var sum=0;
+    for(i=0;i<10;i++){
+        sum+=i;
+    }
+    return sum;
+}
+var sum=add();
+alert(sum);*/
+
+/*function setBox(){
+
+    function box(){
+      var i=0;
+      var sum=0;
+      for(i=0;i<10;i++){
+        sum+=i;
+        alert(i);
+      }
+      return sum;
+
+    }
+  alert(box());
+}
+
+/*setBox();*/
+/*
+box();
+*/
+/*var s='cocohiihsdf';
+alert(s.substr(2,6));*/
+/*var s='cocosfsdfdsfcc';
+var m=s.match(/c/gi);
+alert(m.length);
+*/
+/*
+var sum=45;
+alert(Math.tan(sum));*/
+
+
+/*var box=new Object();
+box.name='cooc';
+box.age=100;
+box.run=function(){
+    alert(box.name+','+box.age);
+}
+
+box.run();*/
+/*function obj(name,age){
+    var obb=new Object;
+    obb.name='coco';
+    obb.age='23';
+    obb.run=function(){
+        alert(this.name+','+this.age);
+    }
+}
+var b=new createObject("sf",'30');
+b.run();
+*/
+/*function createObject(name,age) { 
+    var obj=new Object(); 
+     obj.name=name;
+     obj.age=age; 
+    obj.run=function(){ return
+        this.name + this.age+'运行中...'; }; 
+    return obj; }
+ var box1= createObject('Lee', 100); 
+ var box2= createObject('Jack',200);  
+ alert(box1.run()); 
+ alert(box2.run()); */
+
+
+/*
+ function obj(name,age){
+
+this.name=name;
+this.age=age;
+this.fn=function(){
+    document.write(this.name+','+this.age);
+
+}
+ }
+
+
+ obj.prototype.co=function(){
+    alert(this.name)
+ }
+
+ var ss=new obj('coco',29);
+/* ss.fn();*/
+/*
+ss.co();
+var aa=new obj('fs');
+aa.co();*/
+//工厂化方法
+/*function cPerson(name,sex,age){
+ var o = new Object();//必须是new Object()
+ o.name = name;
+ o.sex = sex;
+ o.age = age;
+ o.show = function(){
+ console.log(this.name,this.age,this.sex);
+ }
+ return o;//返回对象
+}
+ var p1 = cPerson('谦龙','男','100');
+ p1.show();
+ var p2 = cPerson('雏田','女','14');
+ p2.show();
+*/
+
+
+//构造方法模式
+/*
+function Box(name,age){
+this.name=name;
+this.age=age;
+
+}
+
+Box.prototype.fn=function(){
+return this.name+','+this.age;
+}
+var b1=new Box('coco',25);
+var b2=new Box('wg',26);
+
+/*var m=b1.fn();
+var n=b2.fn();*/
+/*alert(b1 instanceof Box);
+alert(b2 instanceof Box);*/
+
+/*alert(b1.fn==b2.fn);
+*/
+
+
+
+/*alert(Array.prototype.sort());*/
+
+//对象的继承
+/*function father(name){
+   this.name=name;
+   this.age='25';
+}
+
+
+function son(name){
+
+this.ss='gsd'
+}
+
+son.prototype=new father();//原型链继承,缺点是不能传递参数进入
+var s=new son();
+alert(s.name);
+var m=new father();
+alert(m.ss);
+*/
+
+/*
+function box(age){
+    this.name='coco';
+    this.age=age;
+}
+
+function bbox(age){
+    box.call(this,age);//对象冒充，给父类传参
+}
+
+var ss=new bbox(34);
+alert(ss.age);
+
+*/
+
+
+
+//闭包的实现
+
+/*function box1(){
+    function d(){
+        return 'fafd';
+    }
+
+    return d();
+}
+
+var dat=box1();
+alert(dat);*/
+
+
+/*function box() { 
+    var age =100; 
+    return function(){ age++;
+     return age;
+}
+} 
+var b=box(); //获得函数 alert(b()); //调用匿名函数 alert(b());*/
+
+/*function box(cout){
+    for(var i=0;i<cout;i++){}
+        var i=9;
+    alert(i);
+}
+box(2);*/
+
+
+/*function  box(cout){
+    (function(){
+        for(var i=0;i<cout;i++)
+    })
+}*/
+
+/*var obj={
+    name:'coco',
+    age:"29",
+    run:function(){
+        if(this.age=='29'){
+            alert('this is the g')
+        }else{
+            alert('boy come on!');
+        }
+    }
+
+}
+obj.run();*/
+
+
+(function(){
+    var box=[1,2,3,4];
+    alert(box)
+})();
+
+</script>
+</body>
+</html>
